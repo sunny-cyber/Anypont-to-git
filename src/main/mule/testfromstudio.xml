@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="10bae9ea-f7e0-4712-97f6-235f286d4d87" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="testfromstudioFlow" doc:id="5801f3b3-1362-401a-a05e-df3e7fed2a03" >
+		<http:listener doc:name="Listener" doc:id="fb50edc2-f597-4611-bf20-ff4c22393d08" config-ref="HTTP_Listener_config" path="/git"/>
+		<set-payload value="#[payload]" doc:name="Set Payload" doc:id="922f30e2-b1df-42e2-a4f9-3632f2acb054" />
+		<logger level="INFO" doc:name="Logger" doc:id="0579beaa-0f75-4e3c-b84f-ddabeeed3260" message="test from studio logger"/>
+	</flow>
+</mule>
