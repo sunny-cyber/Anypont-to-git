@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<flow name="test2Flow" doc:id="5d8902c0-3aec-4dd3-92d6-30d9e972cecb" >
+		<http:listener doc:name="Listener" doc:id="210f3c92-7567-48b8-a957-c851f4a4c4f2" config-ref="HTTP_Listener_config" path="/git2"/>
+		<logger level="INFO" doc:name="Logger" doc:id="4a1edc9b-0c0f-4af2-ba78-1749dabb5750" message="second test"/>
+	</flow>
+</mule>
